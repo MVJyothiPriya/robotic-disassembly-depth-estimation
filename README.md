@@ -16,7 +16,23 @@ The experiments and results are documented in the provided Jupyter notebook.
 ---
 
 # Repository Structure
-
+robotic-disassembly-depth-estimation
+│
+├── DepthCrafter/
+│ └── Source code and configuration files for the DepthCrafter model.
+│
+├── depth-capstone/
+│ ├── scripts/
+│ │ └── Python scripts used to run depth estimation models.
+│ │
+│ └── logs/
+│ └── Small log files generated during experiments.
+│
+├── Depth_estimation.ipynb
+│ └── Jupyter notebook containing experiments using MiDaS, DepthAnything, and DepthCrafter.
+│
+└── README.md
+└── Documentation describing the project and repository structure
 
 ---
 
