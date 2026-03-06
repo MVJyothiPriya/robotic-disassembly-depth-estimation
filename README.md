@@ -6,10 +6,10 @@ This project explores **depth estimation for robotic disassembly tasks** using m
 
 Robotic disassembly of consumer electronics requires reliable **3D scene understanding**. However, real-world conditions such as:
 
-- cluttered scenes
-- reflective surfaces
-- occlusions
-- lighting variation
+- cluttered scenes  
+- reflective surfaces  
+- occlusions  
+- lighting variation  
 
 make depth estimation difficult.
 
@@ -23,20 +23,27 @@ This project evaluates several **pretrained depth estimation models** and compar
 robotic-disassembly-depth-estimation
 │
 ├── DepthCrafter/
-│   └── Source code and configuration files for the DepthCrafter model.
+│   └── Source code and configuration files for the DepthCrafter model
 │
 ├── depth-capstone/
-│   ├── scripts/
-│   │   └── Python scripts used to run depth estimation models.
+│   ├── checkpoints/
+│   │   └── .gitkeep
 │   │
-│   └── logs/
-│       └── Small log files generated during experiments.
+│   ├── data/
+│   │   └── .gitkeep
+│   │
+│   ├── experiments/
+│   │   └── .gitkeep
+│   │
+│   └── scripts/
+│       ├── extract_frames.py
+│       └── filter_blur.py
 │
 ├── Depth_estimation.ipynb
-│   └── Jupyter notebook containing experiments using MiDaS, DepthAnything, and DepthCrafter.
+│
+├── .gitignore
 │
 └── README.md
-    └── Documentation describing the project and repository structure.
 ```
 
 ---
@@ -44,25 +51,38 @@ robotic-disassembly-depth-estimation
 # Folder and File Descriptions
 
 ## DepthCrafter
+
 Contains the implementation of the **DepthCrafter depth estimation model** used in the experiments.
-
-## depth-capstone
-Main project folder containing scripts and logs for running experiments.
-
-### scripts
-Python scripts used to:
-
-- load pretrained depth estimation models
-- process input frames
-- generate depth maps
-- save prediction outputs
-
-### logs
-Contains experiment log files generated during model runs.
 
 ---
 
-# Notebook: Depth_estimation.ipynb
+## depth-capstone
+
+Main project folder containing scripts, dataset structure, experiment placeholders, and model checkpoint placeholders.
+
+### scripts
+
+Python scripts used for dataset preparation:
+
+- **extract_frames.py** – extracts frames from disassembly videos  
+- **filter_blur.py** – removes blurry frames from the dataset
+
+### data
+
+Placeholder directory representing the dataset location.  
+Actual dataset files are stored on HyperGator.
+
+### experiments
+
+Placeholder directory for experiment outputs such as evaluation results and generated depth maps.
+
+### checkpoints
+
+Placeholder directory for trained model checkpoints.
+
+---
+
+# Notebook: `Depth_estimation.ipynb`
 
 This notebook contains the **main experimental pipeline** of the project.
 
@@ -102,7 +122,7 @@ Three pretrained depth estimation models were evaluated on the dataset.
 
 ---
 
-## Fine-tuning Experiment
+# Fine-Tuning Experiment
 
 DepthAnything was further improved using **self-supervised fine-tuning** with:
 
@@ -119,9 +139,9 @@ DepthAnything was further improved using **self-supervised fine-tuning** with:
 ### Observations
 
 - Fine-tuning slightly improved **temporal stability**
-- However, the **high-frequency energy increased**, indicating additional noise
+- However, **high-frequency energy increased**, indicating additional noise
 
-These results suggest that further optimization of the loss functions is needed.
+Further optimization of the training losses is needed.
 
 ---
 
@@ -151,7 +171,7 @@ Metrics used:
 
 Some directories were **not uploaded to GitHub** because they contain very large files (several gigabytes).
 
-Excluded folders:
+### Excluded folders
 
 ```
 depth-capstone/data/
@@ -165,13 +185,15 @@ These folders contain:
 - trained model checkpoints
 - experiment outputs
 
-They are stored on **HyperGator storage** instead.
+Due to their large size, they are stored on **HyperGator storage instead of GitHub**.
 
-HyperGator path:
+### HyperGator storage path
 
 ```
 /blue/egn6933/mulakav/
 ```
+
+Placeholder files (`.gitkeep`) are included in these directories to preserve the repository structure.
 
 ---
 
@@ -183,15 +205,9 @@ HyperGator path:
 Depth_estimation.ipynb
 ```
 
-2. The **DepthCrafter folder** contains model implementation.
+2. The **DepthCrafter** folder contains the model implementation.
 
-3. The **depth-capstone/scripts** folder contains experiment scripts.
-
-4. Logs can be found in:
-
-```
-depth-capstone/logs
-```
+3. The **depth-capstone/scripts** folder contains dataset preparation scripts.
 
 ---
 
@@ -199,16 +215,18 @@ depth-capstone/logs
 
 Future improvements for this project include:
 
-- Further fine-tuning of the depth estimation models
-- Reducing **high-frequency noise in depth maps**
+- Further fine-tuning of depth estimation models
+- Reducing **high-frequency noise** in depth maps
 - Improving **temporal stability across frames**
-- Optimizing the balance between temporal consistency loss and smoothness loss
-- Integrating depth estimation with robotic disassembly pipelines
+- Optimizing the balance between **temporal consistency and smoothness losses**
+- Integrating depth estimation into robotic disassembly pipelines
 
 ---
 
 # Author
 
-Venkata Jyothi Priya Mulaka  
+**Venkata Jyothi Priya Mulaka**  
 M.S. Applied Data Science  
+mvjpriya@gmail.com
+mulakav@ufl.edu
 University of Florida
