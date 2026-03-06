@@ -16,6 +16,8 @@ The experiments and results are documented in the provided Jupyter notebook.
 ---
 
 # Repository Structure
+
+```
 robotic-disassembly-depth-estimation
 │
 ├── DepthCrafter/
@@ -33,6 +35,7 @@ robotic-disassembly-depth-estimation
 │
 └── README.md
     └── Documentation describing the project and repository structure.
+```
 
 ---
 
@@ -72,9 +75,9 @@ Inside the notebook:
 
 Models tested include:
 
-- MiDaS
-- DepthAnything
-- DepthCrafter
+- **MiDaS**
+- **DepthAnything**
+- **DepthCrafter**
 
 ---
 
@@ -84,6 +87,11 @@ Some folders were **not included in this GitHub repository** because they contai
 
 These folders include:
 
+```
+depth-capstone/data/
+depth-capstone/experiments/
+depth-capstone/**/checkpoints/
+```
 
 These directories contain:
 
@@ -95,6 +103,9 @@ Due to their large size, they are stored on **HyperGator storage** instead of Gi
 
 If access to these files is required, they can be found in the HyperGator project directory:
 
+```
+/blue/egn6933/mulakav/
+```
 
 ---
 
@@ -102,6 +113,9 @@ If access to these files is required, they can be found in the HyperGator projec
 
 1. Start with the **Jupyter notebook**
 
+```
+Depth_estimation.ipynb
+```
 
 This notebook demonstrates how different depth estimation models were applied to the dataset.
 
@@ -111,6 +125,9 @@ This notebook demonstrates how different depth estimation models were applied to
 
 4. Generated logs can be found in:
 
+```
+depth-capstone/logs
+```
 
 ---
 
@@ -118,8 +135,17 @@ This notebook demonstrates how different depth estimation models were applied to
 
 The general pipeline used in this project is:
 
+```
+RGB Image
+     ↓
+Pretrained Depth Model
+(MiDaS / DepthAnything / DepthCrafter)
+     ↓
+Predicted Depth Map
+```
 
-Initially, pretrained models were used to evaluate baseline performance.  
+Initially, pretrained models were used to evaluate baseline performance.
+
 Future work includes **fine-tuning these models on robotic disassembly datasets** to improve performance for this specific domain.
 
 ---
