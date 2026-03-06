@@ -1,17 +1,14 @@
 # Robotic Disassembly Depth Estimation
 
 ## Project Overview
+
 This project explores **depth estimation for robotic disassembly tasks** using multiple state-of-the-art depth estimation models. The goal is to generate accurate depth maps from RGB images of objects that may appear in robotic manipulation and disassembly environments.
 
-In this project, several pretrained depth estimation models were evaluated, including:
+Robotic disassembly of consumer electronics requires reliable **3D understanding of scenes**. However, many real-world conditions such as occlusion, clutter, reflections, and lighting variation make depth estimation difficult.
 
-- **MiDaS**
-- **DepthAnything**
-- **DepthCrafter**
+To address this challenge, this project evaluates several **pretrained depth estimation models** and compares their performance on real-world robotic disassembly data.
 
-These models were applied to the same dataset to compare their performance and visualize depth predictions.
-
-The experiments and results are documented in the provided Jupyter notebook.
+The experiments and analysis are implemented in a Jupyter notebook.
 
 ---
 
@@ -42,42 +39,95 @@ robotic-disassembly-depth-estimation
 # Folder and File Descriptions
 
 ## DepthCrafter/
-Contains the implementation and supporting files for the **DepthCrafter depth estimation model**.  
-This model was used as one of the baseline methods for generating depth predictions.
+
+This folder contains the implementation and supporting files for the **DepthCrafter depth estimation model**.
+
+DepthCrafter is one of the models evaluated in this project for generating depth maps from RGB images.
 
 ---
 
 ## depth-capstone/
-Main project folder containing scripts and experiment setup for the depth estimation experiments.
+
+This is the main project directory containing scripts and logs related to the experiments.
 
 ### scripts/
-Contains Python scripts used to:
 
-- load pretrained depth models
+This folder contains Python scripts used to:
+
+- load pretrained depth estimation models
 - process input images
+- run inference
 - generate depth maps
-- save results for analysis
+- save results for further analysis
 
 ### logs/
-Contains small log files created during model execution.
+
+This folder contains small log files generated during model execution.
 
 ---
 
 ## Depth_estimation.ipynb
-This notebook contains the **main experimental workflow** of the project.
+
+This Jupyter notebook contains the **main experimental workflow** of the project.
 
 Inside the notebook:
 
-- pretrained models are loaded
+- pretrained depth models are loaded
 - RGB images are processed
 - depth maps are generated
 - results from different models are visualized and compared
 
-Models tested include:
+The notebook evaluates the following models:
 
 - **MiDaS**
 - **DepthAnything**
 - **DepthCrafter**
+
+---
+
+# Experiments and Baseline Model Testing
+
+In this project, multiple pretrained depth estimation models were applied to frames extracted from consumer electronics disassembly videos.
+
+The goal was to analyze how well existing depth models perform in **robotic disassembly environments**, which often contain:
+
+- cluttered scenes
+- reflective surfaces
+- partial occlusions
+- varying lighting conditions
+
+The pretrained models were used **without additional training** to establish baseline performance.
+
+---
+
+# Model Comparison
+
+The following pretrained models were tested and compared.
+
+| Model | Description | Observations |
+|------|-------------|-------------|
+| MiDaS | Monocular depth estimation model widely used as a baseline | Produces stable depth maps but struggles with reflective surfaces |
+| DepthAnything | Large-scale pretrained depth model | Generates smoother depth maps with better generalization |
+| DepthCrafter | Video-based depth estimation approach | Shows better temporal consistency in sequential frames |
+
+The notebook includes visual comparisons of depth predictions produced by each model.
+
+---
+
+# Depth Estimation Workflow
+
+The general pipeline used in this project is:
+
+```
+RGB Image
+     ↓
+Pretrained Depth Model
+(MiDaS / DepthAnything / DepthCrafter)
+     ↓
+Predicted Depth Map
+```
+
+This pipeline allows quick evaluation of how well pretrained models perform on robotic disassembly scenes.
 
 ---
 
@@ -99,7 +149,7 @@ These directories contain:
 - model checkpoints
 - experiment outputs
 
-Due to their large size, they are stored on **HyperGator storage** instead of GitHub.
+Due to their large size, they are stored on **HyperGator storage instead of GitHub**.
 
 If access to these files is required, they can be found in the HyperGator project directory:
 
@@ -119,9 +169,9 @@ Depth_estimation.ipynb
 
 This notebook demonstrates how different depth estimation models were applied to the dataset.
 
-2. The **DepthCrafter folder** contains the implementation of one of the tested models.
+2. The **DepthCrafter folder** contains the implementation of one of the evaluated models.
 
-3. The **depth-capstone/scripts folder** contains scripts used for running the experiments.
+3. The **depth-capstone/scripts folder** contains scripts used to run experiments.
 
 4. Generated logs can be found in:
 
@@ -131,22 +181,13 @@ depth-capstone/logs
 
 ---
 
-# Depth Estimation Workflow
+# Key Observations
 
-The general pipeline used in this project is:
+From the baseline experiments:
 
-```
-RGB Image
-     ↓
-Pretrained Depth Model
-(MiDaS / DepthAnything / DepthCrafter)
-     ↓
-Predicted Depth Map
-```
-
-Initially, pretrained models were used to evaluate baseline performance.
-
-Future work includes **fine-tuning these models on robotic disassembly datasets** to improve performance for this specific domain.
+- Pretrained depth models can produce reasonable depth predictions without additional training.
+- However, predictions can still contain noise in complex robotic environments.
+- Temporal stability across frames is important for robotics applications.
 
 ---
 
@@ -154,6 +195,16 @@ Future work includes **fine-tuning these models on robotic disassembly datasets*
 
 Future improvements for this project include:
 
-- Fine-tuning depth estimation models on robotic datasets
-- Quantitative evaluation of model performance
-- Integrating depth maps into robotic manipulation pipelines
+- Fine-tuning depth estimation models using robotic disassembly datasets
+- Applying self-supervised learning techniques for temporal consistency
+- Improving depth stability across sequential frames
+- Integrating depth maps into robotic manipulation systems
+- Developing an application interface to visualize depth estimation results
+
+---
+
+# Author
+
+**Venkata Jyothi Priya Mulaka**  
+M.S. Applied Data Science  
+University of Florida
