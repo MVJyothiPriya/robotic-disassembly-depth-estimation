@@ -1,14 +1,14 @@
 # ignore archives
 *.zip
 
-# ignore large folders
-depth-capstone/data/
-depth-capstone/experiments/
+# ignore large folders but allow placeholder
+depth-capstone/data/*
+!depth-capstone/data/.gitkeep
+
+depth-capstone/experiments/*
+!depth-capstone/experiments/.gitkeep
 
 # python junk
 __pycache__/
 *.pyc
 .venv/
-
-# logs (optional to ignore, but yours is tiny)
-# depth-capstone/logs/
