@@ -227,6 +227,6 @@ Future improvements for this project include:
 
 **Venkata Jyothi Priya Mulaka**  
 M.S. Applied Data Science  
-mvjpriya@gmail.com
+gmail: mvjpriya@gmail.com
 University of Florida
-mulakav@ufl.edu
+mail id: mulakav@ufl.edu
