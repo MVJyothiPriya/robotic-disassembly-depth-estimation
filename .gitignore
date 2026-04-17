@@ -1,14 +1,28 @@
-# ignore archives
+# Ignore archives
 *.zip
 
-# ignore large folders but allow placeholder
+# Ignore large folders but keep structure
 depth-capstone/data/*
 !depth-capstone/data/.gitkeep
 
 depth-capstone/experiments/*
 !depth-capstone/experiments/.gitkeep
 
-# python junk
+depth-capstone/checkpoints/*
+!depth-capstone/checkpoints/.gitkeep
+
+# Python cache files
 __pycache__/
 *.pyc
+
+# Virtual environments
 .venv/
+
+# Logs
+*.log
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
