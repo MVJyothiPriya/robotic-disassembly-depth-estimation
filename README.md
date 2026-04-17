@@ -224,8 +224,8 @@ Stored at:
 
 ## 👩‍💻 Author
 
-Venkata Jyothi Priya Mulaka
-M.S. Applied Data Science
+Venkata Jyothi Priya Mulaka, 
+M.S. Applied Data Science, 
 University of Florida
 
 Email: [mulakav@ufl.edu](mailto:mulakav@ufl.edu)
