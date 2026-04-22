@@ -1,0 +1,31 @@
+# Core
+numpy==1.24.4
+scipy==1.10.1
+pandas==2.0.3
+
+# Deep Learning
+torch==2.1.0
+torchvision==0.16.0
+timm==0.9.12
+
+# Computer Vision
+opencv-python==4.8.1.78
+Pillow==10.0.1
+
+# Visualization
+matplotlib==3.7.2
+seaborn==0.12.2
+
+# Progress & Utilities
+tqdm==4.66.1
+
+# Notebook (for your .ipynb)
+jupyter==1.0.0
+ipykernel==6.25.2
+
+# Depth Anything dependencies
+huggingface-hub==0.16.4
+transformers==4.33.2
+
+# Optional (for UI/demo if used)
+gradio==3.41.2
