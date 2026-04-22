@@ -27,5 +27,4 @@ ipykernel==6.25.2
 huggingface-hub==0.16.4
 transformers==4.33.2
 
-# Optional (for UI/demo if used)
 gradio==3.41.2
